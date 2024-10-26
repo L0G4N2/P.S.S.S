@@ -29,7 +29,7 @@ void drive_test(){
   chassis.drive_distance(-20);
   // claw.stop();
   // chassis.drive_distance(-30);
-  chassis.left_swing_to_angle(-20, 10, 2, 0, 1000, 2, 0, 7, 0);
+  chassis.left_swing_to_angle(-45, 10, 2, 0, 1000, 2, 0, 7, 0);
   Clamp.set(true);
   chassis.drive_distance(-10);
   Intake.spin(forward);
