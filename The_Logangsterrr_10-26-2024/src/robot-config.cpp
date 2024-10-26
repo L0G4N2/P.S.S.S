@@ -16,8 +16,10 @@ motor R2 = motor(PORT12, ratio18_1, true);
 motor R3 = motor(PORT11, ratio18_1, false);
 controller Controller1 = controller(primary);
 inertial Inertial15 = inertial(PORT15);
-motor Intake = motor(PORT16, ratio36_1, true);
 digital_out Clamp = digital_out(Brain.ThreeWirePort.A);
+motor IntakeMotorA = motor(PORT16, ratio18_1, true);
+motor IntakeMotorB = motor(PORT19, ratio18_1, true);
+motor_group Intake = motor_group(IntakeMotorA, IntakeMotorB);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable

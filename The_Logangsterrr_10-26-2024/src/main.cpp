@@ -11,8 +11,8 @@
 // R3                   motor         11              
 // Controller1          controller                    
 // Inertial15           inertial      15              
-// Intake               motor         16              
 // Clamp                digital_out   A               
+// Intake               motor_group   16, 19          
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 using namespace vex;
@@ -234,6 +234,5 @@ int main() {
   // Prevent main from exiting with an infinite loop.
   while (true) {
     wait(100, msec);
-    // Kevin is so cool :)
   }
 }

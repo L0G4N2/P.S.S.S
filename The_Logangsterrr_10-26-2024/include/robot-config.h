@@ -11,8 +11,8 @@ extern motor R2;
 extern motor R3;
 extern controller Controller1;
 extern inertial Inertial15;
-extern motor Intake;
 extern digital_out Clamp;
+extern motor_group Intake;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
