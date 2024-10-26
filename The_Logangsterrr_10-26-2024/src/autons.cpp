@@ -31,7 +31,9 @@ void drive_test(){
   // chassis.drive_distance(-30);
   chassis.left_swing_to_angle(-45, 10, 2, 0, 1000, 2, 0, 7, 0);
   Clamp.set(true);
+  wait(200, msec);
   chassis.drive_distance(-10);
+  Clamp.set(false);
   Intake.spin(forward);
   wait(2, sec);
   Intake.stop();
