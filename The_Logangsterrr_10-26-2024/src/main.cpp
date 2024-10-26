@@ -195,6 +195,7 @@ void autonomous(void) {
 /*---------------------------------------------------------------------------*/
 
 void usercontrol(void) {
+  Intake.setVelocity(85, percent);
   // User control code here, inside the loop
   while (1) {
     // This is the main execution loop for the user control program.
