@@ -25,14 +25,14 @@ void odom_constants(){
 
 void drive_test(){
   // five
-  chassis.right_swing_to_angle(45, 10, 2, 0, 1000, 2, 0, 7, 0);
-  Clamp.set(true);
-  wait(200, msec);
-  chassis.drive_distance(-10);
   Clamp.set(false);
+  chassis.drive_distance(28);
   Intake.spin(forward);
-  wait(2, sec);
+  wait(500, msec);
   Intake.stop();
+  chassis.turn_to_angle(242, 10, 2, 0, 1000, 2, 0, 7, 0);
+  chassis.drive_distance(-18);
+  Clamp.set(true);
 }
 
 void turn_test(){
