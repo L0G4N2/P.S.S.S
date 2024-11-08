@@ -16,12 +16,18 @@ void odom_constants(){
   chassis.drive_settle_error = 3;
 }
 
-// void rightCode() {
-//   chassis.drive_distance(28.4);
-//   arm.spin(reverse);
-//   wait(1, sec);
-//   arm.stop(hold);
-// }
+void score() {
+  for (int i = 0; i <= 3; i++) {
+    chassis.drive_distance(2);
+    chassis.drive_distance(-2);
+  }
+}
+
+void gripRing(int numToGrip) {
+  for (int i = 0; i <= numToGrip; i++) {
+    chassis.drive_distance(2);
+  }
+}
 
 void drive_test(){
   // five
@@ -29,13 +35,16 @@ void drive_test(){
   chassis.drive_distance(-32);
   Clamp.set(true);
   Intake.spin(forward);
-  wait(1500, msec);
-  Intake.stop();
-  chassis.turn_to_angle(122, 10, 2, 0, 1000, 2, 0, 7, 0);
+  wait(1000, msec);
+  score();
+  chassis.turn_to_angle(280, 10, 2, 0, 1000, 2, 0, 7, 0);
+  Intake.spin(reverse);
   chassis.drive_distance(20);
   Intake.spin(forward);
-  wait(1500, msec);
-  Intake.stop();
+  gripRing(3);
+  chassis.turn_to_angle(110, 10, 2, 0, 1000, 2, 0, 7, 0);
+  Clamp.set(false);
+  chassis.drive_distance(20);
 }
 
 void turn_test(){
