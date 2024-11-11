@@ -116,6 +116,7 @@ void pre_auton(void) {
   vexcodeInit();
   default_constants();
   Intake.setVelocity(85, percent);
+  Clamp.set(true);
 
   while(auto_started == false){            //Changing the names below will only change their names on the
     Brain.Screen.clearScreen();            //brain screen for auton selection.
