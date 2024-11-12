@@ -18,8 +18,8 @@ void odom_constants(){
 
 void scorePoint() {
   for (int i = 0; i <= 3; i++) {
-    chassis.drive_distance(3);
-    chassis.drive_distance(-3);
+    chassis.left_swing_to_angle(chassis.get_absolute_heading() - 2, 10, 2, 0, 1000, 2, 0, 7, 0);
+    chassis.right_swing_to_angle(chassis.get_absolute_heading() + 2, 10, 2, 0, 1000, 2, 0, 7, 0);
   }
 }
 
@@ -37,15 +37,16 @@ void drive_test(){
   Intake.spin(forward);
   wait(1500, msec);
   scorePoint();
-  chassis.drive_distance(-5);
+  chassis.drive_distance(15);
   Intake.spin(reverse);
   chassis.turn_to_angle(-90, 10, 2, 0, 1000, 2, 0, 7, 0);
   chassis.drive_distance(10);
   Intake.spin(forward);
-  gripRing(2);
+  gripRing(3);
   wait(1500, msec);
   scorePoint();
   Intake.spin(reverse);
+  chassis.drive_distance(15);
   chassis.turn_to_angle(180, 10, 2, 0, 1000, 2, 0, 7, 0);
   chassis.drive_distance(10);
   Intake.spin(forward);
