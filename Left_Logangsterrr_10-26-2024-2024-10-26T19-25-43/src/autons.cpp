@@ -36,30 +36,29 @@ void drive_test(){
   Clamp.set(true);
   Intake.spin(forward);
   wait(1500, msec);
-  scorePoint();
-  chassis.drive_distance(15);
   Intake.spin(reverse);
+  scorePoint();
+  chassis.drive_distance(4);
   chassis.turn_to_angle(-90, 10, 2, 0, 1000, 2, 0, 7, 0);
-  chassis.drive_distance(20);
+  chassis.drive_distance(15);
   Intake.spin(forward);
-  gripRing(3);
-  wait(1500, msec);
+  gripRing(6);
+  wait(2500, msec);
   scorePoint();
   Intake.spin(reverse);
-  chassis.drive_distance(15);
+  chassis.drive_distance(22);
   chassis.turn_to_angle(180, 10, 2, 0, 1000, 2, 0, 7, 0);
   chassis.drive_distance(10);
-  Intake.spin(forward);
-  gripRing(2);
-  wait(1500, msec);
+  gripRing(3);
+  wait(3200, msec);
   scorePoint();
   Intake.spin(reverse);
-  chassis.turn_to_angle(-175, 10, 2, 0, 1000, 2, 0, 7, 0);
-  chassis.drive_distance(5);
-  Intake.spin(forward);
-  gripRing(2);
-  wait(1500, msec);
-  scorePoint();
+  // chassis.turn_to_angle(-175, 10, 2, 0, 1000, 2, 0, 7, 0);
+  // chassis.drive_distance(5);
+  // Intake.spin(forward);
+  // gripRing(3);
+  // wait(1500, msec);
+  // scorePoint();
   }
 
 void turn_test(){
