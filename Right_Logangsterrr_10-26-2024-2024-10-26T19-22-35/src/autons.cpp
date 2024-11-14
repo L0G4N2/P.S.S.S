@@ -16,10 +16,10 @@ void odom_constants(){
   chassis.drive_settle_error = 3;
 }
 
-void score() {
+void scorePoint() {
   for (int i = 0; i <= 3; i++) {
-    chassis.drive_distance(2);
-    chassis.drive_distance(-2);
+    chassis.left_swing_to_angle(chassis.get_absolute_heading() + 2, 10, 2, 0, 1000, 2, 0, 7, 0);
+    chassis.left_swing_to_angle(chassis.get_absolute_heading() - 2, 10, 2, 0, 1000, 2, 0, 7, 0);
   }
 }
 
@@ -32,19 +32,28 @@ void gripRing(int numToGrip) {
 void drive_test(){
   // five
   Clamp.set(false);
-  chassis.drive_distance(-32);
+  chassis.drive_distance(-20);
   Clamp.set(true);
   Intake.spin(forward);
-  wait(1000, msec);
-  score();
-  chassis.turn_to_angle(280, 10, 2, 0, 1000, 2, 0, 7, 0);
+  wait(1500, msec);
   Intake.spin(reverse);
-  chassis.drive_distance(20);
+  scorePoint();
+  chassis.drive_distance(-5);
+  chassis.turn_to_angle(-90, 10, 2, 0, 1000, 2, 0, 7, 0);
+  chassis.drive_distance(15);
   Intake.spin(forward);
-  gripRing(3);
-  chassis.turn_to_angle(110, 10, 2, 0, 1000, 2, 0, 7, 0);
+  gripRing(6);
+  wait(2300, msec);
+  scorePoint();
   Clamp.set(false);
-  chassis.drive_distance(20);
+  chassis.turn_to_angle(0, 10, 2, 0, 1000, 2, 0, 7, 0);
+  chassis.drive_distance(-22);
+  Clamp.set(true);
+  chassis.drive_distance(25);
+  chassis.turn_to_angle(-50);
+  chassis.drive_distance(-20);
+  Clamp.set(false);
+
 }
 
 void turn_test(){
