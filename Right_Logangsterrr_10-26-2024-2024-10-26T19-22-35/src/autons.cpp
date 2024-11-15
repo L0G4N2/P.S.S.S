@@ -18,8 +18,8 @@ void odom_constants(){
 
 void scorePoint() {
   for (int i = 0; i <= 3; i++) {
-    chassis.left_swing_to_angle(chassis.get_absolute_heading() + 2, 10, 2, 0, 1000, 2, 0, 7, 0);
-    chassis.left_swing_to_angle(chassis.get_absolute_heading() - 2, 10, 2, 0, 1000, 2, 0, 7, 0);
+    chassis.left_swing_to_angle(chassis.get_absolute_heading() + 1, 10, 2, 0, 1000, 2, 0, 7, 0);
+    chassis.left_swing_to_angle(chassis.get_absolute_heading() - 1, 10, 2, 0, 1000, 2, 0, 7, 0);
   }
 }
 
@@ -45,13 +45,16 @@ void drive_test(){
   gripRing(6);
   wait(2300, msec);
   scorePoint();
-  Clamp.set(false);
+  chassis.drive_distance(-5);
   chassis.turn_to_angle(0, 10, 2, 0, 1000, 2, 0, 7, 0);
-  chassis.drive_distance(-22);
+  Clamp.set(false);
+  wait(500, msec);
+  chassis.drive_distance(-18);
   Clamp.set(true);
+  wait(700, msec);
   chassis.drive_distance(25);
-  chassis.turn_to_angle(-50);
-  chassis.drive_distance(-20);
+  chassis.turn_to_angle(-70);
+  chassis.drive_distance(-35);
   Clamp.set(false);
 
 }
