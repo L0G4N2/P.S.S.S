@@ -1,4 +1,4 @@
-#include "vex.h"
+ #include "vex.h"
 
 void default_constants(){
   chassis.set_drive_constants(12, 1.5, 0, 10, 0);
@@ -46,10 +46,10 @@ void drive_test(){
   wait(2300, msec);
   scorePoint();
   chassis.drive_distance(-5);
-  chassis.turn_to_angle(0, 10, 2, 0, 1000, 2, 0, 7, 0);
   Clamp.set(false);
+  chassis.turn_to_angle(0, 10, 2, 0, 1000, 2, 0, 7, 0);
   wait(500, msec);
-  chassis.drive_distance(-18);
+  chassis.drive_distance(-17);
   Clamp.set(true);
   wait(700, msec);
   chassis.drive_distance(25);
