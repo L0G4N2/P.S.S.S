@@ -45,7 +45,7 @@ void drive_test(){
   gripRing(6);
   wait(2300, msec);
   scorePoint();
-  chassis.drive_distance(-5);
+  chassis.drive_distance(-2);
   Clamp.set(false);
   chassis.turn_to_angle(0, 10, 2, 0, 1000, 2, 0, 7, 0);
   wait(500, msec);
