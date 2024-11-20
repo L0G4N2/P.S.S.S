@@ -32,22 +32,24 @@ void gripRing(int numToGrip) {
 void drive_test(){
   // five
   Clamp.set(false);
-  chassis.drive_distance(-20);
+  chassis.drive_distance(-15);
+  chassis.turn_to_angle(-35, 10, 2, 0, 1000, 2, 0, 7, 0);
+  chassis.drive_distance(-18);
   Clamp.set(true);
   Intake.spin(forward);
   wait(1500, msec);
   Intake.spin(reverse);
   scorePoint();
+  // // chassis.drive_distance(-2);
+  // chassis.turn_to_angle(-130, 10, 2, 0, 1000, 2, 0, 7, 0);
+  // chassis.drive_distance(10);
+  // Intake.spin(forward);
+  // gripRing(8);
+  // wait(2300, msec);
+  // scorePoint();
   // chassis.drive_distance(-2);
-  chassis.turn_to_angle(-90, 10, 2, 0, 1000, 2, 0, 7, 0);
-  chassis.drive_distance(10);
-  Intake.spin(forward);
-  gripRing(8);
-  wait(2300, msec);
-  scorePoint();
-  // chassis.drive_distance(-2);
-  Clamp.set(false);
-  chassis.turn_to_angle(10, 10, 2, 0, 1000, 2, 0, 7, 0);
+  // Clamp.set(false);
+  // chassis.turn_to_angle(10, 10, 2, 0, 1000, 2, 0, 7, 0);
   // wait(500, msec);
   // chassis.drive_distance(-17);
   // Clamp.set(true);
