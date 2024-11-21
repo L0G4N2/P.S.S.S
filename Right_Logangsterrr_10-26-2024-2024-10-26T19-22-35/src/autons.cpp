@@ -1,4 +1,4 @@
- #include "vex.h"
+  #include "vex.h"
 
 void default_constants(){
   chassis.set_drive_constants(12, 1.5, 0, 10, 0);
@@ -18,8 +18,8 @@ void odom_constants(){
 
 void scorePoint() {
   for (int i = 0; i <= 3; i++) {
-    chassis.left_swing_to_angle(chassis.get_absolute_heading() + 1, 10, 2, 0, 1000, 2, 0, 7, 0);
-    chassis.left_swing_to_angle(chassis.get_absolute_heading() - 1, 10, 2, 0, 1000, 2, 0, 7, 0);
+    chassis.left_swing_to_angle(chassis.get_absolute_heading() + 2, 10, 2, 0, 1000, 2, 0, 7, 0);
+    chassis.left_swing_to_angle(chassis.get_absolute_heading() - 2, 10, 2, 0, 1000, 2, 0, 7, 0);
   }
 }
 
@@ -32,33 +32,33 @@ void gripRing(int numToGrip) {
 void drive_test(){
   // five
   Clamp.set(false);
-  chassis.drive_distance(-15);
-  chassis.turn_to_angle(-35, 10, 2, 0, 1000, 2, 0, 7, 0);
   chassis.drive_distance(-18);
+  chassis.turn_to_angle(-20, 10, 2, 0, 1000, 2, 0, 7, 0);
+  chassis.drive_distance(-8);
   Clamp.set(true);
   Intake.spin(forward);
   wait(1500, msec);
   Intake.spin(reverse);
   scorePoint();
+  // chassis.drive_distance();
+  chassis.turn_to_angle(-90, 10, 2, 0, 1000, 2, 0, 7, 0);
+  chassis.drive_distance(10);
+  Intake.spin(forward);
+  gripRing(10);
+  wait(1800, msec);
+  scorePoint();
   // // chassis.drive_distance(-2);
-  // chassis.turn_to_angle(-130, 10, 2, 0, 1000, 2, 0, 7, 0);
-  // chassis.drive_distance(10);
-  // Intake.spin(forward);
-  // gripRing(8);
-  // wait(2300, msec);
-  // scorePoint();
-  // chassis.drive_distance(-2);
-  // Clamp.set(false);
-  // chassis.turn_to_angle(10, 10, 2, 0, 1000, 2, 0, 7, 0);
-  // wait(500, msec);
-  // chassis.drive_distance(-17);
-  // Clamp.set(true);
-  // wait(700, msec);
-  // chassis.drive_distance(25);
-  // chassis.turn_to_angle(-60);
-  // chassis.drive_distance(-45);
-  // Clamp.set(false);
-
+  Clamp.set(false);
+  chassis.turn_to_angle(0, 10, 2, 0, 1000, 2, 0, 7, 0);
+  // // wait(500, msec);
+  chassis.drive_distance(-18);
+  Clamp.set(true);
+  // // wait(700, msec);
+  chassis.drive_distance(28);
+  chassis.turn_to_angle(-60);
+  chassis.drive_distance(-50);
+  Clamp.set(false);
+  Intake.stop();
 }
 
 void turn_test(){
