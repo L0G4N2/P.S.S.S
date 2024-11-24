@@ -39,7 +39,7 @@ void drive_test(){
   Intake.spin(reverse);
   scorePoint();
   chassis.drive_distance(-4);
-  chassis.turn_to_angle(-90, 10, 2, 0, 1000, 2, 0, 7, 0);
+  chassis.turn_to_angle(90, 10, 2, 0, 1000, 2, 0, 7, 0);
   chassis.drive_distance(15);
   Intake.spin(forward);
   gripRing(6);
@@ -54,7 +54,7 @@ void drive_test(){
   wait(2600, msec);
   scorePoint();
   Intake.spin(reverse);
-  chassis.turn_to_angle(-175, 10, 2, 0, 1000, 2, 0, 7, 0);
+  chassis.turn_to_angle(175, 10, 2, 0, 1000, 2, 0, 7, 0);
   chassis.drive_distance(5);
   Intake.spin(forward);
   gripRing(3);

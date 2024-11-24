@@ -121,16 +121,16 @@ void pre_auton(void) {
     Brain.Screen.clearScreen();            //brain screen for auton selection.
     switch(current_auton_selection){       //Tap the brain screen to cycle through autons.
       case 0:
-        Brain.Screen.printAt(50, 50, "Drive Test");
+        Brain.Screen.printAt(50, 50, "Red_Right");
         break;
       case 1:
-        Brain.Screen.printAt(50, 50, "Drive Test");
+        Brain.Screen.printAt(50, 50, "Red_Left");
         break;
       case 2:
-        Brain.Screen.printAt(50, 50, "Turn Test");
+        Brain.Screen.printAt(50, 50, "Blue_Right");
         break;
       case 3:
-        Brain.Screen.printAt(50, 50, "Swing Test");
+        Brain.Screen.printAt(50, 50, "Blue_Left");
         break;
       case 4:
         Brain.Screen.printAt(50, 50, "Full Test");
@@ -159,16 +159,16 @@ void autonomous(void) {
   auto_started = true;
   switch(current_auton_selection){  
     case 0:
-      drive_test(); //This is the default auton, if you don't select from the brain.
+      Red_Right(); //This is the default auton, if you don't select from the brain.
       break;        //Change these to be your own auton functions in order to use the auton selector.
     case 1:         //Tap the screen to cycle through autons.
-      drive_test();
+      Red_Left();
       break;
     case 2:
-      turn_test();
+      Blue_Right();
       break;
     case 3:
-      swing_test();
+      Blue_Left();
       break;
     case 4:
       full_test();

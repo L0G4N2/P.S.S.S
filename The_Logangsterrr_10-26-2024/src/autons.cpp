@@ -16,148 +16,128 @@ void odom_constants(){
   chassis.drive_settle_error = 3;
 }
 
-// void rightCode() {
-//   chassis.drive_distance(28.4);
-//   arm.spin(reverse);
-//   wait(1, sec);
-//   arm.stop(hold);
-// }
+void scorePoint() {
+  for (int i = 0; i <= 3; i++) {
+    chassis.left_swing_to_angle(chassis.get_absolute_heading() + 2, 10, 2, 0, 1000, 2, 0, 7, 0);
+    chassis.left_swing_to_angle(chassis.get_absolute_heading() - 2, 10, 2, 0, 1000, 2, 0, 7, 0);
+  }
+}
 
-void drive_test(){
+void gripRing(int numToGrip) {
+  for (int i = 0; i <= numToGrip; i++) {
+    chassis.drive_distance(2);
+  }
+}
+
+void Red_Right(){
   // five
-  // claw.spin(reverse);
-  chassis.drive_distance(-20);
-  // claw.stop();
-  // chassis.drive_distance(-30);
-  chassis.left_swing_to_angle(-45, 10, 2, 0, 1000, 2, 0, 7, 0);
-  Clamp.set(true);
-  wait(200, msec);
-  chassis.drive_distance(-10);
   Clamp.set(false);
+  chassis.drive_distance(-18);
+  chassis.turn_to_angle(-20, 10, 2, 0, 1000, 2, 0, 7, 0);
+  chassis.drive_distance(-8);
+  Clamp.set(true);
   Intake.spin(forward);
-  wait(2, sec);
+  wait(1500, msec);
+  Intake.spin(reverse);
+  scorePoint();
+  // chassis.drive_distance();
+  chassis.turn_to_angle(-90, 10, 2, 0, 1000, 2, 0, 7, 0);
+  chassis.drive_distance(10);
+  Intake.spin(forward);
+  gripRing(10);
+  wait(1800, msec);
+  scorePoint();
+  // // chassis.drive_distance(-2);
+  Clamp.set(false);
+  chassis.turn_to_angle(0, 10, 2, 0, 1000, 2, 0, 7, 0);
+  // // // wait(500, msec);
+  // chassis.drive_distance(-18);
+  // Clamp.set(true);
+  // // // wait(700, msec);
+  // chassis.drive_distance(28);
+  // chassis.turn_to_angle(60);
+  // chassis.drive_distance(-50);
+  Clamp.set(false);
   Intake.stop();
-  // claw.stop();
-  // chassis.drive_distance(-13);
-  // chassis.left_swing_to_angle(-95, 10, 2, 0, 1000, 2, 0, 7, 0);
-  // VL.set(false);
-  // wait(.2, seconds);
-  // chassis.turn_to_angle(-265);
-  // chassis.left_swing_to_angle(-272, 10, 2, 0, 1000, 2, 0, 7, 0);
-  // chassis.left_swing_to_angle(-92, 10, 2, 0, 1000, 2, 0, 7, 0);
-  // chassis.drive_distance(-12);
-  // chassis.drive_distance(8);
-  // chassis.turn_to_angle(-272);
-  // claw.spin(forward);
-  // wait(.2, seconds);
-  // chassis.drive_distance(18);
-  // chassis.drive_distance(-14);
-  // claw.stop();
-  // chassis.turn_to_angle(25);
-  // claw.spin(reverse);
-  // chassis.drive_distance(23);
-  // chassis.left_swing_to_angle(45, 10, 2, 0, 1000, 2, 0, 7, 0);
-  // chassis.drive_distance(35);
-  // chassis.turn_to_angle(180);
-  // FlapsR.set(true);
-  // claw.spin(Forward);
-  // chassis.drive_distance(30);
-  // chassis.drive_distance(-13);
-  // FlapsR.set(false);
-
 }
 
-void turn_test(){
+void Red_Left(){
   // five
-  // intake.spin(forward);
-  chassis.drive_distance(5);
-  //intake.stop();
-  chassis.drive_distance(-30);
-  chassis.left_swing_to_angle(-45, 10, 2, 0, 1000, 2, 0, 7, 0);
-  // VL.set(true);
-  chassis.drive_distance(-16);
-  // VL.set(false);
-  wait(.2, seconds);
-  chassis.left_swing_to_angle(-88, 10, 2, 0, 1000, 2, 0, 7, 0);
-  chassis.drive_distance(-12);
-  chassis.drive_distance(8);
-  chassis.turn_to_angle(-270);
-  // intake.spin(reverse);
-  chassis.drive_distance(8);
-  chassis.drive_distance(-14);
-  // intake.stop();
-  chassis.turn_to_angle(25);
-  // intake.spin(forward);
-  chassis.drive_distance(23);
-  chassis.left_swing_to_angle(45, 10, 2, 0, 1000, 2, 0, 7, 0);
-  chassis.drive_distance(35);
-  chassis.turn_to_angle(180);
-  // FlapsR.set(true);
-  // intake.spin(reverse);
-  chassis.drive_distance(35);
-  chassis.drive_distance(-10);
-  // FlapsR.set(false);
-
+  chassis.drive_distance(-18);
+  chassis.turn_to_angle(20, 10, 2, 0, 1000, 2, 0, 7, 0);
+  chassis.drive_distance(-8);
+  Clamp.set(true);
+  Intake.spin(forward);
+  wait(1500, msec);
+  Intake.spin(reverse);
+  scorePoint();
+  chassis.turn_to_angle(90, 10, 2, 0, 1000, 2, 0, 7, 0);
+  chassis.drive_distance(10);
+  Intake.spin(forward);
+  gripRing(10);
+  wait(1800, msec);
+  scorePoint();
+  chassis.turn_to_angle(90, 10, 2, 0, 1000, 2, 0, 7, 0);
+  chassis.drive_distance(10);
+  Intake.spin(forward);
+  gripRing(10);
+  wait(1800, msec);
+  scorePoint();
 }
 
-void swing_test(){
+void Blue_Right(){
   //Win point
-  // intake.spinFor(forward, 360.0, degrees, true);
-  chassis.drive_distance(18);
-  chassis.left_swing_to_angle(44, 10, 2, 0, 1000, 2, 0, 7, 0);
-  // intake.spin(reverse);
-  wait(.2, seconds);
-  chassis.drive_distance(13);
-  chassis.drive_distance(-12);
-  chassis.left_swing_to_angle(0, 10, 2, 0, 1000, 2, 0, 7, 0);
-  // VL.set(true);
-  wait(.2, seconds);
-  chassis.drive_distance(-11);
-  // VL.set(false);
-  wait(.2, seconds);
-  chassis.drive_distance(-6);
-  chassis.left_swing_to_angle(-45, 10, 2, 0, 1000, 2, 0, 7, 0);
-  chassis.drive_distance(-5);
-  chassis.turn_to_angle(90);
-  chassis.turn_to_angle(135);
-  chassis.drive_distance(24);
-
+  chassis.drive_distance(-18);
+  chassis.turn_to_angle(-20, 10, 2, 0, 1000, 2, 0, 7, 0);
+  chassis.drive_distance(-8);
+  Clamp.set(true);
+  Intake.spin(forward);
+  wait(1500, msec);
+  Intake.spin(reverse);
+  scorePoint();
+  chassis.turn_to_angle(-90, 10, 2, 0, 1000, 2, 0, 7, 0);
+  chassis.drive_distance(10);
+  Intake.spin(forward);
+  gripRing(10);
+  wait(1800, msec);
+  scorePoint();
 }
 
-void full_test(){
+void Blue_Left(){
   // six
-  // intake.spin(forward);
-  chassis.drive_distance(5);
-  //intake.stop();
-  chassis.drive_distance(-30);
-  chassis.left_swing_to_angle(-45, 10, 2, 0, 1000, 2, 0, 7, 0);
-  // VL.set(true);
-  chassis.drive_distance(-16);
-  // VL.set(false);
-  wait(.2, seconds);
-  chassis.left_swing_to_angle(-88, 10, 2, 0, 1000, 2, 0, 7, 0);
-  chassis.drive_distance(-12);
-  chassis.drive_distance(8);
-  chassis.turn_to_angle(-270);
-  // intake.spin(reverse);
-  chassis.drive_distance(8);
-  chassis.drive_distance(-14);
-  // intake.stop();
-  chassis.turn_to_angle(25);
-  // intake.spin(forward);
-  chassis.drive_distance(60);
-  chassis.turn_to_angle(170);
-  // intake.spin(reverse);
-  wait(.5, seconds);
-  chassis.turn_to_angle(90);
-  chassis.drive_distance(20);
-  chassis.left_swing_to_angle(180, 10, 2, 0, 1000, 2, 0, 7, 0);
-  // FlapsR.set(true);
-  // intake.spin(reverse);
-  chassis.drive_distance(35);
-  chassis.drive_distance(-10);
-  // FlapsR.set(false);
+  Clamp.set(false);
+  chassis.drive_distance(-18);
+  chassis.turn_to_angle(20, 10, 2, 0, 1000, 2, 0, 7, 0);
+  chassis.drive_distance(-8);
+  Clamp.set(true);
+  Intake.spin(forward);
+  wait(1500, msec);
+  Intake.spin(reverse);
+  scorePoint();
+  // chassis.drive_distance();
+  chassis.turn_to_angle(90, 10, 2, 0, 1000, 2, 0, 7, 0);
+  chassis.drive_distance(10);
+  Intake.spin(forward);
+  gripRing(10);
+  wait(1800, msec);
+  scorePoint();
+  //26haydenwyble@onalaskaisd.net
+  // // chassis.drive_distance(-2);
+  Clamp.set(false);
+  chassis.turn_to_angle(0, 10, 2, 0, 1000, 2, 0, 7, 0);
+  // // // wait(500, msec);
+  // chassis.drive_distance(-18);
+  // Clamp.set(true);
+  // // // wait(700, msec);
+  // chassis.drive_distance(28);
+  // chassis.turn_to_angle(60);
+  // chassis.drive_distance(-50);
+  Clamp.set(false);
+  Intake.stop();
+}
 
+void full_test() {
+  Brain.Screen.print("Super cool and awesome things :)");
 }
 
 void odom_test(){
