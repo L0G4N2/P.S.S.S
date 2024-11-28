@@ -90,7 +90,7 @@ PORT3,     -PORT4,
 3,
 
 //Input the Forward Tracker diameter (reverse it to make the direction switch):
-3.25,
+2.75,
 
 //Input Forward Tracker center distance (a positive distance corresponds to a tracker on the right side of the robot, negative is left.)
 //For a zero tracker tank drive with odom, put the positive distance from the center of the robot to the right side of the drive.
@@ -115,13 +115,16 @@ void pre_auton(void) {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
   default_constants();
-  Intake.setVelocity(90, percent);
+  Intake.setVelocity(85, percent);
 
   while(auto_started == false){            //Changing the names below will only change their names on the
     Brain.Screen.clearScreen();            //brain screen for auton selection.
     switch(current_auton_selection){       //Tap the brain screen to cycle through autons.
       case 0:
+        chassis.position_track();
         Brain.Screen.printAt(50, 50, "Red_Right");
+        Brain.Screen.printAt(100, 100, "X: ", chassis.get_X_position());
+        Brain.Screen.printAt(150, 100, "Y: ", chassis.get_Y_position());
         break;
       case 1:
         Brain.Screen.printAt(50, 50, "Red_Left");
@@ -159,7 +162,7 @@ void autonomous(void) {
   auto_started = true;
   switch(current_auton_selection){  
     case 0:
-      Red_Right(); //This is the default auton, if you don't select from the brain.
+      Red_Right();  //This is the default auton, if you don't select from the brain.
       break;        //Change these to be your own auton functions in order to use the auton selector.
     case 1:         //Tap the screen to cycle through autons.
       Red_Left();
@@ -226,7 +229,6 @@ void usercontrol(void) {
 //
 int main() {
   // Set up callbacks for autonomous and driver control periods.
-  
   Competition.autonomous(autonomous);
   Competition.drivercontrol(usercontrol);
   // Run the pre-autonomous function.
