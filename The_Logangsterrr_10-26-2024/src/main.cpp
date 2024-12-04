@@ -115,7 +115,7 @@ void pre_auton(void) {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
   default_constants();
-  Intake.setVelocity(90, percent);
+  Intake.setVelocity(100, percent);
 
   while(auto_started == false){            //Changing the names below will only change their names on the
     Brain.Screen.clearScreen();            //brain screen for auton selection.
