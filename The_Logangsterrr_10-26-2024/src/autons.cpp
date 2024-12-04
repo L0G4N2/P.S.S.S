@@ -136,6 +136,16 @@ void Blue_Left(){
   Intake.stop();
 }
 
+void Skills() {
+  Clamp.set(false);
+  chassis.turn_to_angle(-30, 5, 2, 0, 1000, 2, 0, 7, 0);
+  chassis.drive_distance(-3);
+  Clamp.set(true);
+  Intake.spin(forward);
+  wait(1500, msec);
+  Intake.stop();
+}
+
 void full_test() {
   Brain.Screen.print("Super cool and awesome things :)");
 }

@@ -130,25 +130,16 @@ void pre_auton(void) {
         Brain.Screen.printAt(50, 50, "Blue_Right");
         break;
       case 3:
-        Brain.Screen.printAt(50, 50, "Blue_Leftt");
+        Brain.Screen.printAt(50, 50, "Blue_Left");
         break;
       case 4:
-        Brain.Screen.printAt(50, 50, "Full Test");
-        break;
-      case 5:
-        Brain.Screen.printAt(50, 50, "Odom Test");
-        break;
-      case 6:
-        Brain.Screen.printAt(50, 50, "Tank Odom Test");
-        break;
-      case 7:
-        Brain.Screen.printAt(50, 50, "Holonomic Odom Test");
+        Brain.Screen.printAt(50, 50, "Skills");
         break;
     }
     if(Brain.Screen.pressing()){
       while(Brain.Screen.pressing()) {}
       current_auton_selection ++;
-    } else if (current_auton_selection == 8){
+    } else if (current_auton_selection == 5){
       current_auton_selection = 0;
     }
     task::sleep(10);
@@ -171,16 +162,7 @@ void autonomous(void) {
       Blue_Left();
       break;
     case 4:
-      full_test();
-      break;
-    case 5:
-      odom_test();
-      break;
-    case 6:
-      tank_odom_test();
-      break;
-    case 7:
-      holonomic_odom_test();
+      Skills();
       break;
  }
 }
