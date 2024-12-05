@@ -139,11 +139,21 @@ void Blue_Left(){
 void Skills() {
   Clamp.set(false);
   chassis.turn_to_angle(-30, 5, 2, 0, 1000, 2, 0, 7, 0);
-  chassis.drive_distance(-3, 0, 5, 0);
+  // chassis.drive_distance(-8, -30, 5, 0);
+  chassis.drive_distance(-8, -30, 5, 3, 2, 0, 1000, 2, 0, 7, 0, 2, 0, 7, 0);
   Clamp.set(true);
   Intake.spin(forward);
   wait(1500, msec);
-  Intake.stop();
+  chassis.turn_to_angle(-90, 5, 2, 0, 1000, 2, 0, 7, 0);
+  // chassis.drive_distance(15, 0, 10, 0);
+  chassis.drive_distance(15, 0, 10, 3, 2, 0, 1000, 2, 0, 7, 0, 2, 0, 7, 0);
+  gripRing(10);
+  wait(2500, msec);
+  chassis.turn_to_angle(-105, 5, 2, 0, 1000, 2, 0, 7, 0);
+  chassis.drive_distance(15);
+  gripRing(10);
+  wait(2500, msec);
+
 }
 
 void full_test() {
