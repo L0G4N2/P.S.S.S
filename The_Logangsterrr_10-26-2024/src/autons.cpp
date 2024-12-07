@@ -47,10 +47,11 @@ void Red_Right(){
   gripRing(10);
   wait(1800, msec);
   scorePoint();
-  // // chassis.drive_distance(-2);
+  // chassis.drive_distance(-2);
   Clamp.set(false);
   chassis.turn_to_angle(0, 6, 2, 0, 1000, 2, 0, 7, 0);
-  chassis.drive_distance(-18, 0, 4, 2, 2, 0, 1000, 2, 0, 7, 0, 2, 0, 7, 0);
+  // distance to center right goal, change first value only, always keep negative
+  chassis.drive_distance(-12, 0, 4, 2, 2, 0, 1000, 2, 0, 7, 0, 2, 0, 7, 0);
   Clamp.set(true);
   wait(250, msec);
   chassis.drive_distance(28, 0, 11, 2, 2, 0, 1000, 2, 0, 7, 0, 2, 0, 7, 0);
@@ -119,8 +120,8 @@ void Blue_Left(){
   // // chassis.drive_distance(-2);
   Clamp.set(false);
   chassis.turn_to_angle(0, 6, 2, 0, 1000, 2, 0, 7, 0);
-  wait(250, msec);
-  chassis.drive_distance(-14, 0, 4, 2, 2, 0, 1000, 2, 0, 7, 0, 2, 0, 7, 0);
+  // distance to center left goal, change first value only, always keep negative
+  chassis.drive_distance(-12, 0, 4, 2, 2, 0, 1000, 2, 0, 7, 0, 2, 0, 7, 0);
   Clamp.set(true);
   wait(250, msec);
   chassis.drive_distance(28, 0, 11, 2, 2, 0, 1000, 2, 0, 7, 0, 2, 0, 7, 0);
