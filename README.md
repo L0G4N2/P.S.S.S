@@ -1,5 +1,3 @@
-# P.S.S.S
-
 # To download a file:
 > Right-click on the desired folder of download and copy the URL (link address), then go to https://download-directory.github.io/ and paste the URL and press "Enter"
 
