@@ -39,11 +39,12 @@ void Red_Right(){
   Intake.spin(reverse);
   scorePoint();
   chassis.turn_to_angle(-60, 6, 2, 0, 2000, 2, 0, 7, 0);
-  chassis.drive_distance(12, -80, 11, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  chassis.drive_distance(14);
   Intake.spin(forward);
   gripRing(10);
   wait(1800, msec);
   scorePoint();
+  Intake.stop();
   Clamp.set(false);
   chassis.turn_to_angle(30, 6, 2, 0, 2000, 2, 0, 7, 0);
   // // distance to center right goal, change first value only, always keep negative
@@ -98,33 +99,30 @@ void Blue_Right(){
 void Blue_Left(){
   // six
   Clamp.set(false);
-  chassis.drive_distance(-18, 0, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
-  chassis.turn_to_angle(20, 6, 2, 0, 2000, 2, 0, 7, 0);
-  chassis.drive_distance(-8, 20, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  chassis.drive_distance(-26, 0, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
   Clamp.set(true);
   Intake.spin(forward);
   wait(1500, msec);
   Intake.spin(reverse);
   scorePoint();
-  // chassis.drive_distance();
-  chassis.turn_to_angle(90, 6, 2, 0, 2000, 2, 0, 7, 0);
-  chassis.drive_distance(10, 90, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  chassis.turn_to_angle(60, 6, 2, 0, 2000, 2, 0, 7, 0);
+  chassis.drive_distance(14);
   Intake.spin(forward);
   gripRing(10);
   wait(1800, msec);
   scorePoint();
-  // // chassis.drive_distance(-2);
-  Clamp.set(false);
-  chassis.turn_to_angle(0, 6, 2, 0, 2000, 2, 0, 7, 0);
-  // distance to center left goal, change first value only, always keep negative
-  chassis.drive_distance(-12, 0, 4, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
-  Clamp.set(true);
-  wait(250, msec);
-  chassis.drive_distance(28, 0, 11, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
-  chassis.turn_to_angle(60, 6, 2, 0, 2000, 2, 0, 7, 0);
-  chassis.drive_distance(-50, -60, 11, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
-  Clamp.set(false);
   Intake.stop();
+  Clamp.set(false);
+  chassis.turn_to_angle(-30, 6, 2, 0, 2000, 2, 0, 7, 0);
+  // // distance to center left goal, change first value only, always keep negative
+  // chassis.drive_distance(-12, 0, 4, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  // Clamp.set(true);
+  // wait(250, msec);
+  // chassis.drive_distance(28, 0, 11, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  // chassis.turn_to_angle(60, 6, 2, 0, 2000, 2, 0, 7, 0);
+  // chassis.drive_distance(-50, -60, 11, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  // Clamp.set(false);
+  // Intake.stop();
 }
 
 void Skills() {
