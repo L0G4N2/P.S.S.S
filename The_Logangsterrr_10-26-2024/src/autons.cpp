@@ -1,4 +1,4 @@
-#include "vex.h"
+ #include "vex.h"
 
 void default_constants(){
   chassis.set_drive_constants(12, 1.5, 0, 10, 0);
@@ -40,6 +40,7 @@ void Red_Right(){
   scorePoint();
   chassis.turn_to_angle(-60, 6, 2, 0, 2000, 2, 0, 7, 0);
   chassis.drive_distance(14);
+  gripRing(2);
   Intake.spin(forward);
   gripRing(10);
   wait(1800, msec);
