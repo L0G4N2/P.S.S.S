@@ -42,7 +42,7 @@ void Red_Right(){
   scorePoint();
   // original angle to turn to -90 degrees: -60
   chassis.turn_to_angle(-90, 6, 2, 0, 2000, 2, 0, 7, 0);
-  chassis.drive_distance(14, 0, 10, 2, 2, 0, 10000, 2, 00, 7, 0, 2, 0, 7, 0);
+  chassis.drive_distance(14, -90, 10, 2, 2, 0, 10000, 2, 00, 7, 0, 2, 0, 7, 0);
   gripRing(2);
   Intake.spin(forward);
   gripRing(10);
@@ -65,60 +65,70 @@ void Red_Right(){
 
 void Red_Left(){
   // five
-  chassis.drive_distance(-26);
+  // original distance for diagonal: -26
+  chassis.drive_distance(-18);
   // chassis.drive_distance(-8, -20, 5, 0, 2, 0, 1000, 2, 0, 7, 0, 2, 0, 7, 0);
   Clamp.set(true);
   Intake.spin(forward);
   wait(2000, msec);
   Intake.spin(reverse);
   scorePoint();
-  chassis.turn_to_angle(50, 6, 2, 0, 2000, 2, 0, 7, 0);
-  chassis.drive_distance(13, 50, 11, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  // original angle to turn to 90 degrees: 50
+  chassis.turn_to_angle(90, 6, 2, 0, 2000, 2, 0, 7, 0);
+  chassis.drive_distance(14, 90, 11, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
   Intake.spin(forward);
   gripRing(10);
   wait(1800, msec);
   scorePoint();
-  chassis.turn_to_angle(140, 6, 2, 0, 2000, 2, 0, 7, 0);
+  // original angle to turn to 180 degrees: 140
+  chassis.turn_to_angle(180, 6, 2, 0, 2000, 2, 0, 7, 0);
   Intake.stop();
 }
 
 void Blue_Right(){
   //Win point
-  chassis.drive_distance(-26);
+  // original distance for diagonal: -26
+  chassis.drive_distance(-18);
   // chassis.drive_distance(-8, -20, 5, 0, 2, 0, 1000, 2, 0, 7, 0, 2, 0, 7, 0);
   Clamp.set(true);
   Intake.spin(forward);
   wait(2000, msec);
   Intake.spin(reverse);
   scorePoint();
-  chassis.turn_to_angle(-50, 6, 2, 0, 2000, 2, 0, 7, 0);
-  chassis.drive_distance(13, -50, 11, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  // original angle to turn to 90 degrees: -50
+  chassis.turn_to_angle(-90, 6, 2, 0, 2000, 2, 0, 7, 0);
+  chassis.drive_distance(14, -90, 11, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
   Intake.spin(forward);
   gripRing(10);
   wait(1800, msec);
   scorePoint();
-  chassis.turn_to_angle(-140, 6, 2, 0, 2000, 2, 0, 7, 0);
+  // original angle to turn to 180 degrees: -140
+  chassis.turn_to_angle(180, 6, 2, 0, 2000, 2, 0, 7, 0);
   Intake.stop();
 }
 
 void Blue_Left(){
   // six
   Clamp.set(false);
-  chassis.drive_distance(-26, 0, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  // original distance for diagonal: -26
+  chassis.drive_distance(-18, 0, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
   Clamp.set(true);
   Intake.spin(forward);
   wait(1500, msec);
   Intake.spin(reverse);
   scorePoint();
-  chassis.turn_to_angle(60, 6, 2, 0, 2000, 2, 0, 7, 0);
-  chassis.drive_distance(14);
+  // original angle to turn to 90 degrees: 60
+  chassis.turn_to_angle(90, 6, 2, 0, 2000, 2, 0, 7, 0);
+  chassis.drive_distance(14, 90, 10, 2, 2, 0, 10000, 2, 00, 7, 0, 2, 0, 7, 0);
+  gripRing(2);
   Intake.spin(forward);
   gripRing(10);
   wait(1800, msec);
   scorePoint();
   Intake.stop();
   Clamp.set(false);
-  chassis.turn_to_angle(-30, 6, 2, 0, 2000, 2, 0, 7, 0);
+  // original angle to turn to 0 degrees: -30
+  chassis.turn_to_angle(0, 6, 2, 0, 2000, 2, 0, 7, 0);
   // // distance to center left goal, change first value only, always keep negative
   // chassis.drive_distance(-12, 0, 4, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
   // Clamp.set(true);
