@@ -132,14 +132,14 @@ void pre_auton(void) {
       case 3:
         Brain.Screen.printAt(50, 50, "Blue_Left");
         break;
-      case 4:
-        Brain.Screen.printAt(50, 50, "Skills");
-        break;
+      // case 4:
+      //   Brain.Screen.printAt(50, 50, "Skills");
+      //   break;
     }
     if(Brain.Screen.pressing()){
       while(Brain.Screen.pressing()) {}
       current_auton_selection ++;
-    } else if (current_auton_selection == 5){
+    } else if (current_auton_selection == 4){
       current_auton_selection = 0;
     }
     task::sleep(10);
@@ -161,9 +161,9 @@ void autonomous(void) {
     case 3:
       Blue_Left();
       break;
-    case 4:
-      Skills();
-      break;
+    // case 4:
+    //   Skills();
+    //   break;
  }
 }
 

@@ -26,6 +26,7 @@ void scorePoint() {
 void gripRing(int numToGrip) {
   for (int i = 0; i <= numToGrip; i++) {
     chassis.drive_distance(2);
+    wait(20, msec);
   }
 }
 
