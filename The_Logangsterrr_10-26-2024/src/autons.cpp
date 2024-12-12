@@ -32,14 +32,16 @@ void gripRing(int numToGrip) {
 void Red_Right(){
   // five
   Clamp.set(false);
-  chassis.drive_distance(-26, 0, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  // original distance for diagonal: -26
+  chassis.drive_distance(-18, 0, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
   Clamp.set(true);
   Intake.spin(forward);
   wait(1500, msec);
   Intake.spin(reverse);
   scorePoint();
-  chassis.turn_to_angle(-60, 6, 2, 0, 2000, 2, 0, 7, 0);
-  chassis.drive_distance(14);
+  // original angle to turn to -90 degrees: -60
+  chassis.turn_to_angle(-90, 6, 2, 0, 2000, 2, 0, 7, 0);
+  chassis.drive_distance(14, 0, 10, 2, 2, 0, 10000, 2, 00, 7, 0, 2, 0, 7, 0);
   gripRing(2);
   Intake.spin(forward);
   gripRing(10);
@@ -47,7 +49,8 @@ void Red_Right(){
   scorePoint();
   Intake.stop();
   Clamp.set(false);
-  chassis.turn_to_angle(30, 6, 2, 0, 2000, 2, 0, 7, 0);
+  // original angle to turn to 0 degrees: 30
+  chassis.turn_to_angle(0, 6, 2, 0, 2000, 2, 0, 7, 0);
   // // distance to center right goal, change first value only, always keep negative
   // chassis.drive_distance(-12, 0, 4, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
   // Clamp.set(true);
