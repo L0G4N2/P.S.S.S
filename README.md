@@ -2,7 +2,7 @@
 C++ Code for the 24-25 VEX Season Using the JAR Template  
 *The_Logangsterrr*  and *Skills_Logangsterrr* are the only files that will be getting updated for the rest of the season  
 *Autonomous* still needs to be perfected  
-Working on a new Intake for the bot, might cause changes in score timing.
+An arm for *Climb* is in progress...
 
 # To download a file:
 > 1. Right-click on the desired folder of download and copy the URL (link address)  
@@ -10,7 +10,7 @@ Working on a new Intake for the bot, might cause changes in score timing.
 > 3. Paste the URL and press "Enter"
 
 # Position of Competition Autonomous Functions
-> *Note: Run The_Logansterrr **BEFORE** plugging in the Controller for Competition, tap the Brain Screen to select an auton based on what side the Robot is on*
+> *Note: Run The_Logansterrr **BEFORE** plugging in the Controller for Competition, tap the Brain Screen to select an auton based on what side the Robot is on **THEN** plug in*
 > 1. Face the back (*Clamp*) towards the *Mobile Goal*  
 > 2. Center the *Intake* & *Clamp* with the corner of the *Mobile Goal* and the connection between two *Field Tiles*  
 > 3. Center the Front Wheels (closest to the *Intake*) of the *Drivetrain* on the *Autonomous Line*
