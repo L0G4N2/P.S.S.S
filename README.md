@@ -10,7 +10,7 @@ An arm for *Climb* is in progress...
 > 3. Paste the URL and press "Enter"
 
 # Position of Competition Autonomous Functions
-> *Note: Run The_Logansterrr **BEFORE** plugging in the Controller for Competition, tap the Brain Screen to select an auton based on what side the Robot is on*
+> *Note: Run The_Logansterrr **BEFORE** plugging in the Controller for Competition, tap the Brain Screen to select an auton based on what side the Robot is on **THEN** plug in*
 > 1. Face the back (*Clamp*) towards the *Mobile Goal*  
 > 2. Center the *Intake* & *Clamp* with the corner of the *Mobile Goal* and the connection between two *Field Tiles*  
 > 3. Center the Front Wheels (closest to the *Intake*) of the *Drivetrain* on the *Autonomous Line*
