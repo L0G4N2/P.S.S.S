@@ -13,6 +13,7 @@
 // Inertial15           inertial      15              
 // Clamp                digital_out   A               
 // Intake               motor_group   16, 19          
+// Arm                  digital_out   B               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 using namespace vex;
@@ -182,6 +183,13 @@ void usercontrol(void) {
     else if (Controller1.ButtonL2.pressing()) {
       Clamp.set(false);
     }
+    // if (Controller1.ButtonUp.pressing()) {
+    //   Arm.set(false);
+    // }
+    // else if (Controller1.ButtonDown.pressing()) {
+    //   Arm.set(true);
+    // }
+    
     //Replace this line with chassis.control_tank(); for tank drive 
     //or chassis.control_holonomic(); for holo drive.
     chassis.control_tank();

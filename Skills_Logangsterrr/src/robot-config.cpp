@@ -20,6 +20,7 @@ digital_out Clamp = digital_out(Brain.ThreeWirePort.A);
 motor IntakeMotorA = motor(PORT16, ratio18_1, true);
 motor IntakeMotorB = motor(PORT19, ratio18_1, true);
 motor_group Intake = motor_group(IntakeMotorA, IntakeMotorB);
+digital_out Arm = digital_out(Brain.ThreeWirePort.B);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable
