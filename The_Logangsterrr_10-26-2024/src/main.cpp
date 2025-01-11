@@ -117,6 +117,7 @@ void pre_auton(void) {
   vexcodeInit();
   default_constants();
   Intake.setVelocity(100, percent);
+  Arm.set(true);
   
   while(auto_started == false){            //Changing the names below will only change their names on the
     Brain.Screen.clearScreen();            //brain screen for auton selection.
@@ -195,12 +196,12 @@ void usercontrol(void) {
     else if (Controller1.ButtonL2.pressing()) {
       Clamp.set(false);
     }
-    // if (Controller1.ButtonUp.pressing()) {
-    //   Arm.set(false);
-    // }
-    // else if (Controller1.ButtonDown.pressing()) {
-    //   Arm.set(true);
-    // }
+    if (Controller1.ButtonUp.pressing()) {
+      Arm.set(false);
+    }
+    else if (Controller1.ButtonDown.pressing()) {
+      Arm.set(true);
+    }
     
     //Replace this line with chassis.control_tank(); for tank drive 
     //or chassis.control_holonomic(); for holo drive.

@@ -33,6 +33,7 @@ void gripRing(int numToGrip) {
 void Red_Right(){
   // five
   Clamp.set(false);
+  Arm.set(true);
   // original distance for diagonal: -26
   chassis.drive_distance(-18, 0, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
   Clamp.set(true);
@@ -110,6 +111,7 @@ void Blue_Right(){
 void Blue_Left(){
   // six
   Clamp.set(false);
+  // Arm.set(true);
   // original distance for diagonal: -26
   chassis.drive_distance(-18, 0, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
   Clamp.set(true);
