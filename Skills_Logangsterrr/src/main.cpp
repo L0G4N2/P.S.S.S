@@ -10,10 +10,10 @@
 // R2                   motor         12              
 // R3                   motor         11              
 // Controller1          controller                    
-// Inertial15           inertial      15              
+// Inertial14           inertial      14              
 // Clamp                digital_out   A               
 // Intake               motor_group   16, 19          
-// Arm                  digital_out   B               
+// Doinker              digital_out   B               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 using namespace vex;
@@ -54,7 +54,7 @@ motor_group(L1, L2, L3),
 motor_group(R1, R2, R3),
 
 //Specify the PORT NUMBER of your inertial sensor, in PORT format (i.e. "PORT1", not simply "1"):
-PORT15,
+PORT14,
 
 //Input your wheel diameter. (4" omnis are actually closer to 4.125"):
 3.25,
