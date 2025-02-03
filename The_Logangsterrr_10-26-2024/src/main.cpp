@@ -10,10 +10,10 @@
 // R2                   motor         12              
 // R3                   motor         11              
 // Controller1          controller                    
-// Inertial15           inertial      15              
+// Inertial14           inertial      14              
 // Clamp                digital_out   A               
 // Intake               motor_group   16, 19          
-// Arm                  digital_out   B               
+// Doinker              digital_out   B               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 using namespace vex;
@@ -54,7 +54,7 @@ motor_group(L1, L2, L3),
 motor_group(R1, R2, R3),
 
 //Specify the PORT NUMBER of your inertial sensor, in PORT format (i.e. "PORT1", not simply "1"):
-PORT15,
+PORT14,
 
 //Input your wheel diameter. (4" omnis are actually closer to 4.125"):
 3.25,
@@ -117,7 +117,8 @@ void pre_auton(void) {
   vexcodeInit();
   default_constants();
   Intake.setVelocity(100, percent);
-  Arm.set(true);
+  Clamp.set(false);
+  Doinker.set(false);
   
   while(auto_started == false){            //Changing the names below will only change their names on the
     Brain.Screen.clearScreen();            //brain screen for auton selection.
@@ -134,14 +135,14 @@ void pre_auton(void) {
       case 3:
         Brain.Screen.printAt(50, 50, "Blue_Left");
         break;
-      // case 4:
-      //   Brain.Screen.printAt(50, 50, "Skills");
-      //   break;
+      case 4:
+        Brain.Screen.printAt(50, 50, "Tank_Odom_Test");
+        break;
     }
     if(Brain.Screen.pressing()){
       while(Brain.Screen.pressing()) {}
       current_auton_selection ++;
-    } else if (current_auton_selection == 4){
+    } else if (current_auton_selection == 5){
       current_auton_selection = 0;
     }
     task::sleep(10);
@@ -163,9 +164,9 @@ void autonomous(void) {
     case 3:
       Blue_Left();
       break;
-    // case 4:
-    //   Skills();
-    //   break;
+    case 4:
+      tank_odom_test();
+      break;
  }
 }
 
@@ -196,11 +197,17 @@ void usercontrol(void) {
     else if (Controller1.ButtonL2.pressing()) {
       Clamp.set(false);
     }
+    // if (Controller1.ButtonA.pressing()) {
+    //   Lift.set(false);
+    // }
+    // else if (Controller1.ButtonY.pressing()) {
+    //   Lift.set(true);
+    // }
     if (Controller1.ButtonUp.pressing()) {
-      Arm.set(false);
+      Doinker.set(true);
     }
     else if (Controller1.ButtonDown.pressing()) {
-      Arm.set(true);
+      Doinker.set(false);
     }
     
     //Replace this line with chassis.control_tank(); for tank drive 

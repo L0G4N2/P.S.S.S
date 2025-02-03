@@ -30,12 +30,26 @@ void gripRing(int numToGrip) {
   }
 }
 
+// void motorPID(int angle) {
+//   int desiredAngle = angle;
+//   PID turnPID(reduce_negative_180_to_180(angle - get_absolute_heading()), turn_kp, turn_ki, turn_kd, turn_starti, turn_settle_error, turn_settle_time, turn_timeout);
+//   while(turnPID.is_settled() == false){
+//     float error = reduce_negative_180_to_180(angle - get_absolute_heading());
+//     float output = turnPID.compute(error);
+//     output = clamp(output, -turn_max_voltage, turn_max_voltage);
+//     drive_with_voltage(output, -output);
+//     task::sleep(10);
+//   }
+//   DriveL.stop(hold);
+//   DriveR.stop(hold);
+// }
+ 
 void Red_Right(){
   // five
   Clamp.set(false);
-  Arm.set(true);
+  Doinker.set(true);
   // original distance for diagonal: -26
-  chassis.drive_distance(-18, 0, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  chassis.drive_distance(-18, 0, 5, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
   Clamp.set(true);
   Intake.spin(forward);
   wait(1500, msec);
@@ -43,7 +57,7 @@ void Red_Right(){
   scorePoint();
   // original angle to turn to -90 degrees: -60
   chassis.turn_to_angle(-90, 6, 2, 0, 2000, 2, 0, 7, 0);
-  chassis.drive_distance(14, -90, 10, 2, 2, 0, 10000, 2, 00, 7, 0, 2, 0, 7, 0);
+  chassis.drive_distance(14, -90, 5, 2, 2, 0, 10000, 2, 00, 7, 0, 2, 0, 7, 0);
   gripRing(2);
   Intake.spin(forward);
   gripRing(10);
@@ -67,7 +81,7 @@ void Red_Right(){
 void Red_Left(){
   // five
   // original distance for diagonal: -26
-  chassis.drive_distance(-18);
+  chassis.drive_distance(-18, 0, 5, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
   // chassis.drive_distance(-8, -20, 5, 0, 2, 0, 1000, 2, 0, 7, 0, 2, 0, 7, 0);
   Clamp.set(true);
   Intake.spin(forward);
@@ -76,7 +90,7 @@ void Red_Left(){
   scorePoint();
   // original angle to turn to 90 degrees: 50
   chassis.turn_to_angle(90, 6, 2, 0, 2000, 2, 0, 7, 0);
-  chassis.drive_distance(14, 90, 11, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  chassis.drive_distance(14, 90, 5, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
   Intake.spin(forward);
   gripRing(10);
   wait(1800, msec);
@@ -89,7 +103,7 @@ void Red_Left(){
 void Blue_Right(){
   //Win point
   // original distance for diagonal: -26
-  chassis.drive_distance(-18);
+  chassis.drive_distance(-18, 0, 5, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
   // chassis.drive_distance(-8, -20, 5, 0, 2, 0, 1000, 2, 0, 7, 0, 2, 0, 7, 0);
   Clamp.set(true);
   Intake.spin(forward);
@@ -98,7 +112,7 @@ void Blue_Right(){
   scorePoint();
   // original angle to turn to 90 degrees: -50
   chassis.turn_to_angle(-90, 6, 2, 0, 2000, 2, 0, 7, 0);
-  chassis.drive_distance(14, -90, 11, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  chassis.drive_distance(14, -90, 5, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
   Intake.spin(forward);
   gripRing(10);
   wait(1800, msec);
@@ -111,9 +125,9 @@ void Blue_Right(){
 void Blue_Left(){
   // six
   Clamp.set(false);
-  // Arm.set(true);
+  Doinker.set(true);
   // original distance for diagonal: -26
-  chassis.drive_distance(-18, 0, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  chassis.drive_distance(-18, 0, 5, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
   Clamp.set(true);
   Intake.spin(forward);
   wait(1500, msec);
@@ -121,7 +135,7 @@ void Blue_Left(){
   scorePoint();
   // original angle to turn to 90 degrees: 60
   chassis.turn_to_angle(90, 6, 2, 0, 2000, 2, 0, 7, 0);
-  chassis.drive_distance(14, 90, 10, 2, 2, 0, 10000, 2, 00, 7, 0, 2, 0, 7, 0);
+  chassis.drive_distance(14, 90, 5, 2, 2, 0, 10000, 2, 00, 7, 0, 2, 0, 7, 0);
   gripRing(2);
   Intake.spin(forward);
   gripRing(10);
@@ -143,21 +157,77 @@ void Blue_Left(){
 }
 
 void Skills() {
+  // Clamp Goal and Score
   Clamp.set(false);
-  // chassis.drive_distance(-8, -30, 5, 0);
-  chassis.drive_distance(-8, 0, 5, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  chassis.drive_distance(-14, 0, 3, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
   Clamp.set(true);
   Intake.spin(forward);
-  wait(1500, msec);
-  chassis.turn_to_angle(-60, 5, 2, 0, 2000, 2, 0, 7, 0);
-  // chassis.drive_distance(15, 0, 10, 0);
-  chassis.drive_distance(15, 30, 10, 3, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
-  gripRing(10);
-  wait(2500, msec);
-  chassis.turn_to_angle(-75, 10, 2, 0, 1200, 2, 0, 7, 0);
-  chassis.drive_distance(15, -75, 8, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
-  gripRing(10);
-  wait(2500, msec);
+  wait(1000, msec);
+  // Score Two Rings in a Row
+  chassis.turn_to_angle(-90, 9, 2, 0, 2000, 2, 0, 7, 0);
+  wait(150, msec);
+  chassis.drive_distance(22, -90, 8, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  wait(1300, msec);
+  chassis.drive_distance(14, -90, 8, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  wait(1300, msec);
+  // Turn to Score the Ring Next to the Wall
+  chassis.turn_to_angle(45, 9, 2, 0, 2000, 2, 0, 7, 0);
+  wait(150, msec);
+  chassis.drive_distance(18, 42, 8, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  wait(1300, msec);
+  // Drive to Score the Ring in Line to the Robots Current Position
+  chassis.turn_to_angle(-173, 9, 2, 0, 2000, 2, 0, 7, 0);
+  wait(150, msec);
+  chassis.drive_distance(33, 180, 8, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  wait(1300, msec);
+  // Score the Ring Next to the Ladder
+  chassis.turn_to_angle(88, 9, 2, 0, 2000, 2, 0, 7, 0);
+  wait(150, msec);
+  chassis.drive_distance(24, 88, 8, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  wait(1300, msec);
+  // Drive and Drop Off the Goal in the Corner
+  chassis.turn_to_angle(135, 9, 2, 0, 2000, 2, 0, 7, 0);
+  wait(150, msec);
+  chassis.drive_distance(-80, 135, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  Clamp.set(false);
+
+  // Drive to Clamp the Goal Across the Field
+  chassis.turn_to_angle(-89, 9, 2, 0, 2000, 2, 0, 7, 0);
+  wait(150, msec);
+  chassis.drive_distance(-64, -88, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  wait(150, msec);
+  chassis.turn_to_angle(-60, 9, 2, 0, 2000, 2, 0, 7, 0);
+  wait(150, msec);
+  chassis.drive_distance(-18, -60, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  Clamp.set(true);
+  wait(150, msec);
+  // Score the Two Rings in a Row
+  chassis.turn_to_angle(90, 9, 2, 0, 2000, 2, 0, 7, 0);
+  wait(150, msec);
+  chassis.drive_distance(25, 90, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  wait(1300, msec);
+  chassis.drive_distance(11, 90, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  wait(1300, msec);
+  // Turn to Score the Ring Next to the Wall
+  chassis.turn_to_angle(-45, 9, 2, 0, 2000, 2, 0, 7, 0);
+  wait(150, msec);
+  chassis.drive_distance(18, -45, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  wait(1300, msec);
+  // Score the Ring in Line to the Robots Current Position
+  chassis.turn_to_angle(180, 9, 2, 0, 2000, 2, 0, 7, 0);
+  wait(150, msec);
+  chassis.drive_distance(35, 180, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  wait(150, msec);
+  // Score the Ring Next to the Ladder
+  chassis.turn_to_angle(-88, 9, 2, 0, 2000, 2, 0, 7, 0);
+  wait(150, msec);
+  chassis.drive_distance(24, -88, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  wait(150, msec);
+  // Drive and Drop Off the Goal in the Corner
+  chassis.turn_to_angle(-135, 9, 2, 0, 2000, 2, 0, 7, 0);
+  wait(150, msec);
+  chassis.drive_distance(-90, -135, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  Clamp.set(false);
 }
 
 void full_test() {
