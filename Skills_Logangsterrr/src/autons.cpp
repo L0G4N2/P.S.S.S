@@ -193,19 +193,19 @@ void Skills() {
   wait(250, msec);
   
   // Drive to Clamp the Goal Across the Field
-  chassis.turn_to_angle(-87, 9, 2, 0, 2000, 2, 0, 7, 0);
+  chassis.turn_to_angle(-86, 9, 2, 0, 2000, 2, 0, 7, 0);
   wait(250, msec);
-  chassis.drive_distance(-67, -87, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  chassis.drive_distance(-67, -86, 5, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
   wait(250, msec);
-  chassis.drive_distance(-7, -87, 11, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  chassis.drive_distance(-7, -86, 11, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
   Clamp.set(true);
   wait(250, msec);
   // Score the Two Rings in a Row
-  chassis.turn_to_angle(90, 9, 2, 0, 2000, 2, 0, 7, 0);
+  chassis.turn_to_angle(85, 9, 2, 0, 2000, 2, 0, 7, 0);
   wait(250, msec);
-  chassis.drive_distance(25, 90, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  chassis.drive_distance(25, 85, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
   wait(1300, msec);
-  chassis.drive_distance(11, 90, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
+  chassis.drive_distance(11, 85, 10, 2, 2, 0, 10000, 2, 0, 7, 0, 2, 0, 7, 0);
   wait(1300, msec);
   // Turn to Score the Ring Next to the Wall
   chassis.turn_to_angle(-45, 9, 2, 0, 2000, 2, 0, 7, 0);
